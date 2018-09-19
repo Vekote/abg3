@@ -3,48 +3,52 @@ using System.Collections;
 
 public class PlayerMovementScript : MonoBehaviour
 {
-    public float playerSpeed = 4f;
+    public float movementSpeed = 4f;
+    public float jumpForce = 100f;
     public GameObject jumpDustCloud;
-    private Rigidbody2D playerBody;
-    private Transform transform;
-    private Vector3 defaultScale;
-    private bool isAirborne;
+    
+    private Rigidbody playerBody;
+    private bool isGrounded;
+    private bool hasDoubleJumpLeft;
+
+    private Vector3 movementDirection = Vector3.zero;
 
     void Start()
     {
-        playerBody = GetComponent<Rigidbody2D>();
-        transform = GetComponent<Transform>();
-        defaultScale = transform.localScale;
+        playerBody = GetComponent<Rigidbody>();
     }
 
-    void Update(){
-        if (!isAirborne && Input.GetButtonDown("Jump"))
+    void OnCollisionEnter(Collision col)
+    {
+        if (col.gameObject.tag == "Ground")
         {
-            Instantiate(jumpDustCloud, transform.position, jumpDustCloud.transform.rotation);
-            Jump();
+            isGrounded = true;
         }
     }
 
-    void FixedUpdate()
+    void OnCollisionExit(Collision col)
     {
-        if (isAirborne)
-            transform.localScale = defaultScale * 1.5f;
-        else transform.localScale = defaultScale;
-
-        Vector2 inputVelocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
-        playerBody.velocity = inputVelocity * playerSpeed;
+        if (col.gameObject.tag == "Ground")
+        {
+            isGrounded = false;
+            hasDoubleJumpLeft = true;
+        }
     }
 
-    private void Jump()
+        void Update()
     {
-        isAirborne = true;
-        gameObject.layer = 8;
-        Invoke("SetAirborneToFalse", 1);
-    }
+        Vector3 inputVelocity = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")).normalized;
+        movementDirection = inputVelocity * movementSpeed;
+        if (isGrounded || hasDoubleJumpLeft)
+        {
+            if (Input.GetButtonDown("Jump"))
+            {
+                Instantiate(jumpDustCloud, transform.position, jumpDustCloud.transform.rotation);
+                hasDoubleJumpLeft = false;
+                movementDirection.y = jumpForce;
+            }
+        }
 
-    private void SetAirborneToFalse()
-    {
-        gameObject.layer = 1;
-        isAirborne = false;
+        playerBody.AddForce(movementDirection); 
     }
 }
