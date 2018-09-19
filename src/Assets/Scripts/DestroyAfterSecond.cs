@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DestroyAfterSecond : MonoBehaviour {
+public class DestroyAfterSecond : MonoBehaviour
+{
 	void Start () {
-	Destroy (gameObject, 1f);	
+	    Destroy (gameObject, 1f);	
 	}
 }
