@@ -23,7 +23,6 @@ GameObject:
   - component: {fileID: 23046923338609418}
   - component: {fileID: 65003782587729138}
   - component: {fileID: 54092380993197188}
-  - component: {fileID: 114515863872497644}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -113,19 +112,3 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114515863872497644
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1401297027921204}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40e721e9e285cfe40b19b187a749988c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movementSpeed: 10
-  jumpForce: 100
-  gravityForce: 10
-  jumpDustCloud: {fileID: 1089270356152270, guid: 5538468e6254ebe42abe9cca30c46041,
-    type: 2}
