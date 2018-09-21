@@ -36,7 +36,8 @@ public class PlayerMovementScript : MonoBehaviour
     }
 
         void Update()
-    {
+    {	
+		
         Vector3 inputVelocity = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")).normalized;
         movementDirection = inputVelocity * movementSpeed;
         if (isGrounded || hasDoubleJumpLeft)
@@ -48,7 +49,6 @@ public class PlayerMovementScript : MonoBehaviour
                 movementDirection.y = jumpForce;
             }
         }
-
         playerBody.AddForce(movementDirection); 
     }
 }

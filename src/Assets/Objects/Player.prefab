@@ -23,10 +23,10 @@ GameObject:
   - component: {fileID: 23046923338609418}
   - component: {fileID: 65003782587729138}
   - component: {fileID: 54092380993197188}
-  - component: {fileID: 114515863872497644}
+  - component: {fileID: 114928755832966446}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -59,7 +59,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 9fc0e5573bcb6814eb6a23796f7885eb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -93,9 +93,9 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1401297027921204}
   serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 1
-  m_AngularDrag: 1
+  m_Mass: 0.5
+  m_Drag: 10
+  m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -107,13 +107,13 @@ BoxCollider:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1401297027921204}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 2f18cb71b70b1f3488f4c1106369d5d1, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114515863872497644
+--- !u!114 &114928755832966446
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -121,11 +121,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1401297027921204}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40e721e9e285cfe40b19b187a749988c, type: 3}
+  m_Script: {fileID: 11500000, guid: 6bb05345b4bec08489fbef812bac2ba4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 10
-  jumpForce: 100
-  gravityForce: 10
-  jumpDustCloud: {fileID: 1089270356152270, guid: 5538468e6254ebe42abe9cca30c46041,
+  movementSpeed: 50
+  jumpForce: 1000
+  jumpDustCloud: {fileID: 1089270356152270, guid: f972b8c745c787344acf5f5c9df644e7,
     type: 2}

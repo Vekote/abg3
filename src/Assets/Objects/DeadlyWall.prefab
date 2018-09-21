@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33014865964139820}
   - component: {fileID: 23451594573148262}
   - component: {fileID: 65472640444359274}
-  - component: {fileID: 114594556428390098}
+  - component: {fileID: 114215206377120914}
   m_Layer: 9
   m_Name: DeadlyWall
   m_TagString: Deadly
@@ -58,7 +58,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 5bafd421a28f01f4d9aec1b720a730cc, type: 2}
+  - {fileID: 2100000, guid: a4299560b32a2a348ae6167946ea45df, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -97,7 +97,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114594556428390098
+--- !u!114 &114215206377120914
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -105,6 +105,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1026617924697478}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43457f82202cd6346a242e330dd5868e, type: 3}
+  m_Script: {fileID: 11500000, guid: 8338dc4418917734c87af8104a4d7bc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
