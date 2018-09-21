@@ -126,5 +126,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 50
   jumpForce: 1000
+  rotationSpeed: 100
   jumpDustCloud: {fileID: 1089270356152270, guid: f972b8c745c787344acf5f5c9df644e7,
     type: 2}
